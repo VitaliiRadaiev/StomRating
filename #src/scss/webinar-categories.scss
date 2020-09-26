@@ -1,0 +1,215 @@
+.webinar-categories-block {
+	margin: 49px 0 54px;
+
+	@media (max-width: 575px) {
+		margin: 24px 0 24px;
+	}
+
+	&__head {
+		margin: 24px 0;
+		font-weight: normal;
+		font-size: 18px;
+		line-height: 21px;
+
+		& > p {
+			margin: 0px 0 16px;
+			max-width: 635px;
+		}
+	}
+	&__nav {
+		display: flex;
+		overflow-x: auto;
+		padding-bottom: 10px;
+		margin-bottom: 36px;
+
+		@media (max-width: $md3+px) {
+			margin-right: -15px;
+		}
+
+
+		@media (max-width: 575px) {
+			margin-bottom: 12px;
+		}
+
+		& > li {
+			&:not(:last-child) {
+				margin-right: 40px;
+
+				@media (max-width: 575px) {
+					margin-right: 25px;
+				}
+			}
+
+			&.active {
+				& > a {
+					color: #000;
+					border-bottom: 3px solid #000;
+				}
+			}
+
+			& > a {
+				display: inline-block; 
+				font-weight: bold;
+				font-size: 24px;
+				line-height: 28px;
+				color: rgba($textColor, 0.54);
+				transition: all .2s ease;
+				white-space: nowrap;
+
+				@media (min-width: 992px) {
+					&:hover {
+						color: #000;
+						border-bottom: 3px solid #000;
+					}
+				}
+			}
+		}
+	}
+	&__cards {
+		margin: 69px 0 40px;
+
+		@media (max-width: 575px) {
+			margin: 31px 0 40px;
+		}
+
+		& > li {
+
+			&:not(:last-child) {
+				margin-bottom: 15px;
+			}
+		}
+	}
+
+	&__pagination {
+		display: flex;
+		justify-content: center;
+		margin: 40px 0;
+		overflow-x: auto;
+		flex-wrap: wrap;
+
+		&._many-elements {
+			@media (max-width: 575px) {
+				flex-wrap: nowrap;
+				justify-content: flex-start;
+				margin-right: -15px;	
+			}
+		}
+
+		& > li {
+			&:not(:last-child) {
+				margin-right: 16px;
+				margin-bottom: 16px;
+			}
+
+			&.active {
+				& > a {
+					background: $mainColor1;
+					color: #fff;
+				}
+			}
+
+			& > a {
+				display: inline-block;
+				padding: 8px 14px;
+				border: 1px solid $mainColor1;
+				border-radius: 10px;
+				transition: all .2s ease;
+				background: #fff;
+				color: rgba(#000, 0.54);
+				font-size: 24px;
+			}
+
+			@media (min-width: 992px) {
+				&:hover {
+					& > a {
+						background: $mainColor1;
+						color: #fff;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+.card-webinar-categories {
+
+	&__inner {
+		background: #FFFFFF;
+		border: 1px solid #EAEAEA;
+		border-radius: 6px;
+		padding: 24px 24px 22px 24px;
+		display: flex;
+
+		@media (max-width: $md3+px) {
+			display: block;
+		}
+	}
+
+	&__column {
+		&_1 {
+			flex: 0 0 auto;
+			margin-right: 24px;
+
+			@media (max-width: $md3+px) {
+				margin-right: 0;
+				margin-bottom: 24px;
+			}
+		}
+		&_2 {
+			flex: 1 1 auto;
+		}
+	}
+	&__img {
+		width: 232px;
+		height: 232px;
+		overflow: hidden;
+		border-radius: 6px;
+
+		@media (max-width: $md3+px) {
+			margin: 0 auto;
+			width: 240px;
+			height: 240px;
+		}
+	}
+
+	&__title {
+		max-width: 700px;
+		font-weight: bold;
+		font-size: 21px;
+		line-height: 30px;
+		margin-top: 15px;
+		margin-bottom: 16px;
+
+
+		@media (max-width: 575px) {
+			font-size: 16px;
+			line-height: 22px;
+		}
+	}
+
+	&__time {
+		font-weight: bold;
+		font-size: 14px;
+		line-height: 16px;
+		color: rgba($textColor, 0.54);
+		margin-bottom: 16px;
+	}
+
+	&__btn-wrap {
+		margin: 15px 0 17px;
+
+		@media (max-width: 575px) {
+			margin-bottom: 32px;
+		}
+	}
+	&__btn-link {
+		display: inline-block;
+		&:not(:last-child) {
+			margin-right: 5px;
+			margin-bottom: 8px;
+		}
+	}
+	&__more-detail {}
+}
+
