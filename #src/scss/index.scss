@@ -301,6 +301,8 @@
 
 				@media (max-width: $md3+px) {
 					height: 61px;
+					display: flex;
+					align-items: center;
 				}
 			}
 
@@ -336,8 +338,43 @@
 			padding-left: 10px;
 		}
 
+		&:nth-child(3) {
+			padding-left: 10px;
+		}
+
+
+
 		@media (max-width: $md3+px) {
 			color: rgba($textColor, 0.54);
+
+			&:nth-child(2) {
+				width: 127px;
+				min-width: 127px;
+				order: -1;
+			}
+
+			&:nth-child(3) {
+				min-width: 125px;
+			}
+
+			&:nth-child(4) {
+				min-width: 110px;
+			}
+
+			&:nth-child(5) {
+				min-width: 110px;
+			}
+
+			&:nth-child(6) {
+				min-width: 120px;
+				width: 100%;
+			}
+
+			&:nth-child(7) {
+				min-width: 210px;
+				order: -1;
+			}
+
 		}
 	}
 
@@ -357,9 +394,10 @@
 			border-right: 1px solid #ccc;
 			height: 98px;
 			white-space: normal;
+			width: 100%;
 
 
-			@media (min-width: 1151px) {
+			@media (min-width: 1251px) {
 				position: relative;
 				top: 1px;
 				border-right: none;
@@ -382,7 +420,7 @@
 				border-bottom: 1px solid #cccccc;
 			}
 
-			& > .td {
+			& > .td, td {
 				border-bottom: 1px solid #cccccc;
 
 				@media (max-width: $md3+px) {
@@ -392,34 +430,87 @@
 		}
 	}
 
+	.table-rating {
+		width: 127px;
+		min-width: 127px;
+		padding-right: 10px;
+		padding-left: 10px;
+
+		@media (max-width: $md3+px) {
+			order: -1;
+		}
+
+
+		& .rating-block {
+			display: block;
+			width: 107px;
+			height: 20px;
+		}
+
+		& .rating {
+			height: 20px;
+
+			@media( max-width: 575px) {
+				width: 97%;
+			}
+		}
+
+		& .rating__line {
+			font-size: 18px;
+			height: 20px;
+		}
+
+		& .rating__activeline {
+			font-size: 18px;
+			height: 20px;
+		}
+	}
+
 	& .td { 
 
 		&_1 {
-			font-weight: 500;
-			font-size: 16px;
-			line-height: 18px;
-			display: flex;
-			align-items: center;
+			
+			display:flex;
+			flex-direction: column;
+			justify-content: center;
+			flex: 1 1 auto;
+			& > a {
 
-			@media (max-width: $md3+px) {
-				font-size: 14px;
-				line-height: 16px;
-			}
+				font-weight: 500;
+				font-size: 16px;
+				line-height: 18px;
+				display: flex;
+				align-items: center;
+				color: $textColor;
+				transition: all .2s ease;
 
-			& > span {
-				flex: 0 0 auto;
-				display: inline-block;
-				width: 65px;
-				height: 65px;
-				background: #FFFFFF;
-				border: 1px solid #EAEAEA;
-				border-radius: 6px;
-				margin-right: 28px;
+				@media (min-width: 992px) {
+					&:hover {
+						color: rgba($textColor, 0.54);
+					}
+				}
 
 				@media (max-width: $md3+px) {
-					display: none;
+					font-size: 14px;
+					line-height: 16px;
+				}
+
+				& > span {
+					flex: 0 0 auto;
+					display: inline-block;
+					width: 65px;
+					height: 65px;
+					background: #FFFFFF;
+					border: 1px solid #EAEAEA;
+					border-radius: 6px;
+					margin-right: 28px;
+
+					@media (max-width: $md3+px) {
+						display: none;
+					}
 				}
 			}
+
 		}
 
 		&_2 {
@@ -430,12 +521,19 @@
 			@media (max-width: $md3+px) {
 				width: 125px;
 				min-width: 125px;
+				flex: 0 0 125px;
 			}
 		}
 
 		&_3 {
-			width: 145px;
-			min-width: 145px;
+			//width: 145px;
+			//min-width: 145px;
+			width: 11%;
+
+			@media (max-width: $md3+px) {
+				min-width: 110px;
+				flex: 0 0 100px;
+			}
 
 			& > span {
 				display: block;
@@ -464,11 +562,18 @@
 					content: url('../img/icons/no.svg');
 				}
 			}
+
 		}
 
 		&_4 {
-			width: 157px;
-			min-width: 157px;
+			//width: 157px;
+			min-width: 130px;
+			white-space: normal;
+
+			@media (max-width: $md3+px) {
+				min-width: 110px;
+				flex: 0 0 110px;
+			}
 
 			& > a {
 				@media (max-width: $md3+px) {
@@ -479,8 +584,15 @@
 		}
 
 		&_5 {
-			width: 140px;
-			min-width: 140px;
+			//width: 140px;
+			//min-width: 140px;
+			width: 11.5%;
+			flex: 0 0 11.5%;
+
+			@media (max-width: $md3+px) {
+				min-width: 120px;
+				flex: 0 0 120px;
+			}
 
 			& > span {
 				display: block;
@@ -518,6 +630,9 @@
 			@media (max-width: $md3+px) {
 				width: 210px;
 				min-width: 210px;
+				flex: 0 0 210px;
+				order: -1;
+				padding-left: 8px;
 			}
 
 
@@ -675,6 +790,48 @@
 		}
 	}
 	&__slider {}
+
+	&__list {
+		margin: 85px 0px;
+		position: relative;
+
+		@media (max-width: $md3+px) {
+			margin: 40px 0px;
+		}
+
+		& li {
+			margin-bottom: 50px;
+
+			& .item-slider-reviews {
+				padding: 0;
+
+				@media (max-width: 649px) {
+					text-align: left;
+				}
+			}
+
+			& .item-slider-reviews__text {
+				max-width: 600px;
+			}
+
+			& .item-slider-reviews__top {
+				@media (max-width: $md3+px) {
+					display: flex;
+
+					& .item-slider-reviews__column {
+						&_1 {
+							margin-right: 24px;
+						}
+						&_2 {}
+					}
+				}
+			}
+		}
+
+		@media (max-width: 1480px) {
+			margin: 85px auto;
+		}
+	}	
 }
 
 
@@ -1214,8 +1371,10 @@
 			padding: 5px 16px 16px;  
 		}
 
-		& > p {
-			margin: 15px 0;
+		& > div {
+			& > p {
+				margin: 15px 0;
+			}
 		}
 
 		& h4 {

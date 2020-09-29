@@ -21,34 +21,50 @@ table td, table th {
 }
 
 /* Mobile */
-@media only screen and (max-width: 1150px) {
+@media only screen and (max-width: 1250px) {
 	
 	table.responsive { margin-bottom: 0; }
 	
-	.pinned { position: absolute; left: 0; top: -1px; background: #fff; width: 49%; overflow: hidden; overflow-x: scroll; }
+	.pinned { position: absolute; left: 0; top: -1px; background: #fff; width: 30%; overflow: hidden; overflow-x: scroll; }
 	.pinned table { border-right: none; border-left: none; width: 100%; }
 	.pinned table th, .pinned table td { white-space: nowrap; }
 	.pinned td:last-child { 
 		border-bottom: 0; 
 	}
 
-		@media (max-width: $md3+px) {
-			.pinned {
-				top: 0px;
-			}
-			.pinned table td { 
+		// @media (max-width: $md3+px) {
+		// 	.pinned {
+		// 		top: 0px;
+		// 	}
+		// 	.pinned table td { 
 
-				height: 61px !important;
-			}
-		}
+		// 		height: 61px !important;
+		// 	}
+		// }
 
 	
 	div.table-wrapper { position: relative; margin-bottom: 20px; overflow: hidden;  }
-	div.table-wrapper div.scrollable { margin-left: 49%; }
+	div.table-wrapper div.scrollable { margin-left: 30%; }
 	div.table-wrapper div.scrollable { overflow: scroll; overflow-y: hidden; }	
 	
 	table.responsive td, table.responsive th { position: relative; white-space: nowrap; overflow: hidden; }
 	table.responsive th:first-child, table.responsive td:first-child, table.responsive td:first-child, table.responsive.pinned td { display: none; }
 	
 	
+}
+
+@media only screen and (max-width: $md2+px) {
+	.pinned {width: 40%;}
+	div.table-wrapper div.scrollable { margin-left: 40%; }
+}
+
+@media only screen and (max-width: $md3+px) {
+	table.responsive tr:first-child {
+		display: flex;
+	}
+}
+
+@media only screen and (max-width: 479px) {
+	.pinned {width: 49%;}
+	div.table-wrapper div.scrollable { margin-left: 49%; }
 }

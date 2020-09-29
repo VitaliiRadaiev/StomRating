@@ -131,7 +131,7 @@ textarea {
 	appearance: none;
 }
 .input {
-	border-radius: 0 !important;
+	border-radius: 0;
 	width: 100%;
 	display: block;
 	padding: 0px 20px;
@@ -371,7 +371,12 @@ textarea.input {
 	height: 25px;
 	&.edit .star{cursor: pointer;}
 
-	.star{width: 17px;height: 14px;display: inline-block;position: relative;z-index: 3;}
+	.star{width: 25px;height: 25px;display: inline-block;position: relative;z-index: 3; 
+
+		&:not(:last-child) {
+			margin-right: 3px;
+		}
+	}
 }
 .rating__line{
 	position: absolute;

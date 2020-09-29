@@ -1,0 +1,10 @@
+.articles-page {
+	& .title {
+		@media (max-width: $md3+px) {
+			@media (max-width: $md3+px) {
+				font-size: 34px;
+				line-height: 38px;
+			}
+		}
+	}
+}

@@ -319,6 +319,44 @@ $('.option').click(function(event) {
 // === // pagination handler mobile ==================================================================
 
 
+// ===  reviews-block_2 ==================================================================
+{
+	let reviewsBlock = document.querySelector('.reviews-block_2');
+	if(reviewsBlock) {
+		if(document.documentElement.clientWidth <= 649) {
+			document.querySelectorAll('.item-slider-reviews').forEach((item) => {
+				let span = item.querySelector('.item-slider-reviews__name > span');
+				let boxMobile = item.querySelector('.item-slider-reviews__mobile-date');
+				if(span) {
+
+					boxMobile.append(span);
+				}
+			})
+		}
+	}
+}
+// === //  reviews-block_2 ==================================================================
+
+
+
+// === reviews-form handler ==================================================================
+{
+	let reviewForm = document.querySelector('.review-form');
+
+	if(reviewForm) {
+		let textarea = document.querySelector('.review-form .textarea');
+		let infoBlock = document.querySelector('.review-form .review-form__textarea-info > span');
+
+		textarea.addEventListener('input', () => {
+			infoBlock.innerText = textarea.value.length;
+		})
+	}
+
+}
+
+// === //  reviews-form handler ==================================================================
+
+
 
 });
 
