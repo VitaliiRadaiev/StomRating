@@ -441,3 +441,10 @@ h6 {
 
 
 
+.srm-list {
+	& .card-webinar-categories__img {
+		@media (max-width: $md3+px) {
+			margin: 0 0;
+		}
+	}
+}
