@@ -1,7 +1,5 @@
 //var isMobile = { Android: function () { return navigator.userAgent.match(/Android/i); }, BlackBerry: function () { return navigator.userAgent.match(/BlackBerry/i); }, iOS: function () { return navigator.userAgent.match(/iPhone|iPad|iPod/i); }, Opera: function () { return navigator.userAgent.match(/Opera Mini/i); }, Windows: function () { return navigator.userAgent.match(/IEMobile/i); }, any: function () { return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows()); } };
 
-@@include('forms.js');
-
 $(document).ready(function() {
 	@@include('burger.js');
 	document.querySelector('body').classList.add('isload');
@@ -379,6 +377,56 @@ $('.option').click(function(event) {
 // === //  reviews-form handler ==================================================================
 
 
+
+// === form filter handler ==================================================================
+{
+	let form = document.querySelector('.filter');
+	let btnClear = form.querySelector('.filter__clear > a');
+
+	if(form) {
+
+		const removeActive = () => {
+			form.querySelectorAll('.option').forEach(item => {
+				item.classList.remove('active');
+			})
+		}
+
+		btnClear.addEventListener('click', (e) => {
+			e.preventDefault();
+			removeActive();
+
+			form.querySelectorAll('.options').forEach(item => {
+
+				let option = item.firstElementChild;
+				option.classList.add('active');
+				let radio = item.firstElementChild.firstElementChild.checked;
+				radio.checked = true;
+			})
+
+
+			$.each($('.option.active'), function(index, val) {
+				$(this).find('input').prop('checked', true);
+			});
+			$('.option').click(function(event) {
+				if(!$(this).hasClass('disable')){
+						var target = $(event.target);
+					if (!target.is("a")){
+						if($(this).hasClass('active') && $(this).hasClass('order') ){
+							$(this).toggleClass('orderactive');
+						}
+							$(this).parents('.options').find('.option').removeClass('active');
+							$(this).toggleClass('active');
+							$(this).children('input').prop('checked', true);
+					}
+				}
+			});
+		})
+
+	}
+
+
+}
+// === // form filter handler ==================================================================
 
 });
 
