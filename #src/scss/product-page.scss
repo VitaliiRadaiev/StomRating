@@ -302,6 +302,7 @@
 		font-size: 12px;
 		line-height: 14px;
 		color: #171818;
+		word-break: break-word;
 	}
 }
 
@@ -819,6 +820,15 @@
 	}
 
 	&__slider {}
+
+	&__btn-wrap {
+		margin-top: 40px;
+
+		@media (max-width: 649px) {
+			text-align: center;
+		}
+			
+	}
 }
 
 

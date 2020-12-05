@@ -199,8 +199,33 @@ $('.option').click(function(event) {
 		    }
 		  ]
 		});
+			
 	}
 }
+
+{
+	let reviews = document.querySelectorAll('.item-slider-reviews');
+	if(reviews) {
+		reviews.forEach(item => {
+			let text = item.querySelector('.item-slider-reviews__text > p');
+			let a = item.querySelector('.item-slider-reviews__text a');
+			a.style.display = "none";
+			let txt = text.innerText; 
+			if(txt.length > 414) {
+				text.innerText = [...text.innerText].slice(0, 400).join('') + ' ';
+				a.style.display = "block";
+				text.append(a);
+				a.addEventListener('click', (e) => {
+					e.preventDefault();
+					a.style.display = "none";
+					text.innerText = txt;
+				})
+			}
+
+		})
+	}
+}
+
 
 {
 	let slider = document.querySelector('.slider-reviews-2');
@@ -377,10 +402,10 @@ $('.option').click(function(event) {
 		})
 
 		if(inputFile) {
-			let label1 = inputFile.previousElementSibling;
-			let label2 = label1.cloneNode(true);
-			label2.innerText = 'Выберите файл';
+			let label2 = document.createElement('label');
+			label2.htmlFor = inputFile.id;
 			label2.className = 'btn-default-2';
+			label2.innerText = 'Выберите файл';
 			inputFile.after(label2);
 
 			inputFile.addEventListener('change', function(e) {
@@ -405,14 +430,20 @@ $('.option').click(function(event) {
 	if(list) {
 		document.querySelectorAll('.item-lecturers').forEach(item => {
 			let text = item.querySelector('.item-lecturers__text > p');
-			let a = item.querySelector('.item-lecturers__text > p > a');
+			let a = item.querySelector('.item-lecturers__text a');
+			a.style.display = "none";
 			let txt = text.innerText; 
-			text.innerText = [...text.innerText].slice(0, 320).join('') + ' ';
-			text.append(a);
-			a.addEventListener('click', (e) => {
-    			e.preventDefault();
-    			text.innerText = [...txt].slice(0, -14).join('');
-			})
+			if(txt.length > 414) {
+				text.innerText = [...text.innerText].slice(0, 400).join('') + ' ';
+				a.style.display = "block";
+				text.append(a);
+				a.addEventListener('click', (e) => {
+	    			e.preventDefault();
+	    			a.style.display = "none";
+	    			text.innerText = txt;
+				})
+			}
+
 		})
 	}
 }
